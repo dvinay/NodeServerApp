@@ -3,6 +3,7 @@ const hbs = require('hbs');//will check views directly
 const fs = require('fs');
 
 var app = express();
+var port = process.env.PORT || 3000;
 
 app.set('view engine','hbs');
 app.use(express.static(__dirname + '/public'));
@@ -52,6 +53,6 @@ app.get('/bad', (request,response) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('app has started');
+app.listen(port, () => {
+  console.log(`app has started ${port}`);
 });
